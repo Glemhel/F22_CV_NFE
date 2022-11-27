@@ -16,7 +16,7 @@ Team:
 
 ## Description
 Neural Face Editor is an application that utilizes GAN latent space manipulation to change anime faces facial attributes. Application is available in form of telegram bot via [@neural_face_editor_bot](https://t.me/neural_face_editor_bot).
-To achieve such result, StyleGAN [[1]](#1) is trained on [animefacesdataset](https://www.gwern.net/Danbooru2021) [[2]](#2) for anime faces generation. Then, several SVM are trained for separate attributes. Finally, ideas from [[3]](#3) are used to perform unconditional and conditional attributes manipulation. To let user use their own pictures, hybrid GAN inversion [[4]](#4) is implemented. To assess GAN image generation, FID [[5]](#5) distance is calculated on the dataset of real and fake images. Output quality of generated images has been assessed manually. More detailes are provided in project report.
+To achieve such result, StyleGAN [[1]](#1) is trained on [animefacesdataset](https://www.gwern.net/Danbooru2021) [[2]](#2) for anime faces generation. Then, several SVM are trained for separate attributes. Finally, ideas from [[3]](#3) are used to perform unconditional and conditional attributes manipulation. To let user use their own pictures, hybrid GAN inversion [[4]](#4) is implemented. To assess GAN image generation, FID [[5]](#5) distance is calculated on the dataset of real and fake images. Output quality of generated images has been assessed manually. More detailes are provided in [project report](https://github.com/Glemhel/F22_CV_NFE/blob/main/CV_Report.pdf).
 
 ## Telegram Bot Demo
 https://user-images.githubusercontent.com/66643655/204153747-7515023c-4b79-4aa3-b4e6-72e9ce785685.mp4
