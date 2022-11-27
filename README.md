@@ -52,8 +52,6 @@ After getting separating hyperplanes, we implemented the way of attribute manipu
 4. Changing the hair length without controlling the hair colour
 ![change_color_length](images/change_color_length.png)
 
-As we can see, both usual and conditional manipulation work well. However, it is not successful for eyes since the labelled annotator performed bad on eye colour. As a result, separating hyperplanes for eye colour are very far from the true ones.
-
 ### GAN Inversion
 Some results to access quality of GAN inversion:
 
