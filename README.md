@@ -32,7 +32,7 @@ Stage 1 is image generation. StyleGAN is used to produce images of anime faces.
 
 Stage 2 is generated image annotation. We use [illustration2Vec](https://github.com/rezoo/illustration2vec) proposed by Saito and Matsui [[6]](#6) to tag images with tags we need.
 
-Stage 3 is image classification. For the each attribute we want to be able to control further, we train a SVM for separating latent codes based on some feature. This would let us know the vector in which this feature changes in the latent space.
+Stage 3 is image classification. For each attribute we want to be able to control further, we train a SVM for separating latent codes based on some feature. This lets us know the vector in which this feature changes in the latent space.
 
 ## Results
 Sample generated images, produced by GAN: <br/>
