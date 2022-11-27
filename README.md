@@ -21,7 +21,7 @@ It leverages techniques mentioned in the papers to edit real users’ photos, ch
 These features for editing would probably include hair colour, eye colour, etc., which are not explored in the previous works.
 
 ## Demo
-https://user-images.githubusercontent.com/66643655/204153432-2b356215-2135-401a-b37f-569546d243eb.mp4
+https://user-images.githubusercontent.com/66643655/204153747-7515023c-4b79-4aa3-b4e6-72e9ce785685.mp4
 
 ## Project Architecture
 ![Step 1 and 2](images/image_generation_annotation.jpg)
