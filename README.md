@@ -15,11 +15,8 @@ Team:
 - [References](#references)
 
 ## Description
-NFE is a tool that allows anyone to edit their anime pictures using Deep Learning to change attributes such as hair colour, hair length, eye colour etc.
-
-The project is mainly inspired by works on interpreting the latent space of GANs for people face generation [[1]](#1) and other methods of manipulating GAN output [[2]](#2). 
-It leverages techniques mentioned in the papers to edit real users’ photos, change multiple image features, and preserve the general image content. 
-These features for editing would probably include hair colour, eye colour, etc., which are not explored in the previous works.
+Neural Face Editor is an application that utilizes GAN latent space manipulation to change anime faces facial attributes. Application is available in form of telegram bot via [@neural_face_editor_bot](https://t.me/neural_face_editor_bot).
+To achieve such result, StyleGAN [[1]](#1) is trained on [animefacesdataset](https://www.gwern.net/Danbooru2021) [[2]](#2) for anime faces generation. Then, several SVM are trained for separate attributes. Finally, ideas from [[3]](#3) are used to perform unconditional and conditional attributes manipulation. To let user use their own pictures, hybrid GAN inversion [[4]](#4) is implemented. To assess GAN image generation, FID [[5]](#5) distance is calculated on the dataset of real and fake images. Output quality of generated images has been assessed manually. More detailes are provided in project report.
 
 ## Telegram Bot Demo
 https://user-images.githubusercontent.com/66643655/204153747-7515023c-4b79-4aa3-b4e6-72e9ce785685.mp4
@@ -29,11 +26,11 @@ https://user-images.githubusercontent.com/66643655/204155710-8620c5ee-a8bb-4c03-
 ## Project Architecture
 ![Step 1 and 2](images/image_generation_annotation.jpg)
 ![Step 3](images/svm.jpg)
-Mainly adopted from Shen et al. [[1]](#1), our project architecture consists of several models.
+Mainly adopted from Shen et al. [[3]](#3), our project architecture consists of several models.
 
 Stage 1 is image generation. StyleGAN is used to produce images of anime faces.
 
-Stage 2 is generated image annotation. We use [illustration2Vec](https://github.com/rezoo/illustration2vec) proposed by Saito and Matsui [[2]](#2) to tag images with tags we need.
+Stage 2 is generated image annotation. We use [illustration2Vec](https://github.com/rezoo/illustration2vec) proposed by Saito and Matsui [[6]](#6) to tag images with tags we need.
 
 Stage 3 is image classification. For the each attribute we want to be able to control further, we train a SVM for separating latent codes based on some feature. This would let us know the vector in which this feature changes in the latent space.
 
@@ -42,7 +39,7 @@ Sample generated images, produced by GAN: <br/>
 ![samples](images/samples.png)
 
 ### Image Manipulation
-After getting separating hyperplanes, we implemented the way of attribute manipulation from [[1]](#1). Specifically, given the separating hyperplane n and the latent vector z, we generate several images using $z+an$, where `a=np.linspace(-3, 3, 6)`. Examples of image manipulation:
+After getting separating hyperplanes, we implemented the way of attribute manipulation from [[3]](#3). Specifically, given the separating hyperplane n and the latent vector z, we generate several images using $z+an$, where `a = np.linspace(-3, 3, 6)`. Examples of image manipulation:
 1. Making hair more (or less) green while keeping the hair length
 ![change_color_green](images/change_color_green.png)
 2. Making hair more (or less) red without controlling the hair length
@@ -63,7 +60,19 @@ Some results to access quality of GAN inversion:
 
 ## References
 <a id="1">[1]</a>
-Shen, Y., Gu, J., Tang, X., & Zhou, B. (2019). Interpreting the Latent Space of GANs for Semantic Face Editing. arXiv. https://doi.org/10.48550/arXiv.1907.10786
+T. Karras, S. Laine, and T. Aila, “A style-based generator architecture for generative adversarial networks,” in CVPR, 2019.
 
-<a id="2">[2]</a> 
+<a id="2">[2]</a>
+Anonymous, D. community, and G. Branwen, “Danbooru2021: A large-scale crowdsourced and tagged anime illustration dataset,” https://www.gwern.net/Danbooru2021, January 2022. [Online]. Available: https://www.gwern.net/Danbooru2021
+
+<a id="3">[3]</a>
+Y. Shen, J. Gu, X. Tang, and B. Zhou, “Interpreting the latent space of gans for semantic face editing,” in 2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2020, pp. 9240–9249
+
+<a id="4">[4]</a>
+J. Zhu, Y. Shen, D. Zhao, and B. Zhou, “In-domain gan inversion for real image editing,” in ECCV, 2020.
+
+<a id="5">[5]</a>
+M. Heusel, H. Ramsauer, T. Unterthiner, B. Nessler, and S. Hochreiter, “Gans trained by a two time-scale update rule converge to a local nash equilibrium,” Advances in neural information processing systems, vol. 30, 2017.
+
+<a id="6">[6]</a> 
 Upchurch, P., Gardner, J., Pleiss, G., Pless, R., Snavely, N., Bala, K., & Weinberger, K. (2016). Deep Feature Interpolation for Image Content Changes. arXiv. https://arxiv.org/abs/1611.05507v2
