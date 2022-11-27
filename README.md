@@ -75,4 +75,4 @@ J. Zhu, Y. Shen, D. Zhao, and B. Zhou, “In-domain gan inversion for real image
 M. Heusel, H. Ramsauer, T. Unterthiner, B. Nessler, and S. Hochreiter, “Gans trained by a two time-scale update rule converge to a local nash equilibrium,” Advances in neural information processing systems, vol. 30, 2017.
 
 <a id="6">[6]</a> 
-Upchurch, P., Gardner, J., Pleiss, G., Pless, R., Snavely, N., Bala, K., & Weinberger, K. (2016). Deep Feature Interpolation for Image Content Changes. arXiv. https://arxiv.org/abs/1611.05507v2
+Saito, Masaki, and Yusuke Matsui. "Illustration2vec: a semantic vector representation of illustrations." SIGGRAPH Asia 2015 Technical Briefs. 2015. 1-4.
