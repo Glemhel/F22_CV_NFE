@@ -23,6 +23,8 @@ These features for editing would probably include hair colour, eye colour, etc.,
 ## Demo
 https://user-images.githubusercontent.com/66643655/204153747-7515023c-4b79-4aa3-b4e6-72e9ce785685.mp4
 
+https://user-images.githubusercontent.com/66643655/204155710-8620c5ee-a8bb-4c03-bfc4-f6f1837d9db0.mp4
+
 ## Project Architecture
 ![Step 1 and 2](images/image_generation_annotation.jpg)
 ![Step 3](images/svm.jpg)
