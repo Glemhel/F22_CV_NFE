@@ -1,4 +1,4 @@
-# F22_CV_NFE
+# :robot: Neural Face Editor (NFE) :art:
 
 Neural Face Editor - edit your images with power of GAN's and SoTA methods!
 
